@@ -1,0 +1,131 @@
+body {
+  background-image: linear-gradient(
+    141deg,
+    #ffbcd3 0%,
+    #f6bfff 39%,
+    #9ae4ff 86%
+  );
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: #909090;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  border: 0;
+  cursor: pointer;
+  background-color: transparent;
+  font-family: inherit;
+}
+
+.tasks {
+  background-color: #fff;
+  padding: 70px 40px;
+  box-shadow: 8px 5px 25px 1px rgba(123, 123, 123, 0.5);
+  max-height: 80vh;
+  width: 400px;
+  overflow-y: auto;
+}
+
+.task-new {
+  font-family: inherit;
+  border: 0;
+  border-bottom: 1px solid #d4d4d4;
+  transition: border-color 0.5s;
+  width: calc(100% - 70px);
+  font-size: 20px;
+}
+
+.task-new:focus {
+  border-color: #000;
+  outline: none;
+}
+
+.btn-new {
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  background-color: #eb7aff;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 30px;
+  transition: background-color 0.5s;
+}
+
+.btn-new:hover {
+  background-color: #65d6ff;
+}
+
+.task-form {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 50px;
+}
+
+.task {
+  margin-bottom: 15px;
+  position: relative;
+  width: max-content;
+}
+
+.task-input {
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+.task-input + .task-label::before {
+  content: "\00a0";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border: 1px solid #909090;
+  border-radius: 50%;
+  margin-right: 8px;
+  position: relative;
+  top: 10px;
+  background-color: #fff;
+  transition: background-color 0.5s;
+}
+
+.task-input:checked + .task-label::before {
+  background-color: #eb7aff;
+}
+
+.task-input:checked + .task-label {
+  opacity: 0.5;
+}
+
+.task-input + .task-label::after {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 22px;
+  width: calc(100% - 20px);
+  height: 1px;
+  background-color: #000;
+  transform: scale(0);
+  transition: transform 0.3s;
+  transform-origin: left;
+}
+
+.task-input:checked + .task-label::after {
+  transform: scale(1);
+}
+
+.btn-delete {
+  float: right;
+  margin-top: 50px;
+  font-size: 16px;
+  color: #eb7aff;
+  transition: color 0.5s;
+}
+
+.btn-delete:hover {
+  color: #65d6ff;
+}
